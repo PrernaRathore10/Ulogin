@@ -5,12 +5,13 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
+        {% load static %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{% static "css/signin.css" %}">
     </head>
     <body>
 
@@ -24,34 +25,36 @@
         </div>
         {% endfor %}
 
-
-        <h3>Sign Up</h3>
-        
-        <form action="/signup" method="post">
-            {% csrf_token %}
-            <label for="">Username</label>
-            <input type="text" id="username" name="username" placeholder="Create a username(only letters and numbers)" required>
-            <br>
-            <label for="">First Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Firstname" required>
-            <br>
-            <label for="">Last Name</label>
-            <input type="text" id="lname" name="lname" placeholder="Lastname" required>
-            <br>
-            <label for="">Email</label>
-            <input type="email" id="email" name="email" placeholder="eg. abc@gmail.com" required>
-            <br>
-            <label for="">Password</label>
-            <input type="password" id="pass1" name="pass1" placeholder="Create a password(only letters and numbers)" required>
-            <br>
-            <label for="">Confirm Password</label>
-            <input type="password" id="pass2" name="pass2" placeholder="Same as password" required>
-            <br>
+        <div class="container">
             
+            <h3>Sign Up</h3>
             
-            <button type="submit">Sign Up</button>
-
-        </form>
+            <form action="/signup" method="post">
+                {% csrf_token %}
+                <label for="">Username</label>
+                <input type="text" id="username" name="username" placeholder="Create a username(only letters and numbers)" required>
+                <br>
+                <label for="">First Name</label>
+                <input type="text" id="fname" name="fname" placeholder="Firstname" required>
+                <br>
+                <label for="">Last Name</label>
+                <input type="text" id="lname" name="lname" placeholder="Lastname" required>
+                <br>
+                <label for="">Email</label>
+                <input type="email" id="email" name="email" placeholder="eg. abc@gmail.com" required>
+                <br>
+                <label for="">Password</label>
+                <input type="password" id="pass1" name="pass1" placeholder="Create a password(only letters and numbers)" required>
+                <br>
+                <label for="">Confirm Password</label>
+                <input type="password" id="pass2" name="pass2" placeholder="Same as password" required>
+                <br>
+                
+                
+                <button type="submit">Sign Up</button>
+                
+            </form>
+        </div>
 
         <script src="" async defer></script>
     </body>

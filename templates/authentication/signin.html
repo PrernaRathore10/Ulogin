@@ -5,12 +5,13 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
+        {% load static %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Sign In</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{% static 'css/signin.css' %}">
     </head>
     <body>
 
@@ -23,24 +24,25 @@
             </button>
         </div>
         {% endfor %}
-
-        <h3>Sign In</h3>
-        
-        <form action="/signin" method="post">
-            {% csrf_token %}
-            <label for="">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username" required>
-            <br>
+        <div class="container">
+            <h3>Sign In</h3>
             
-            <label for="">Password</label>
-            <input type="password" id="pass1" name="pass1" placeholder="Enter your password" required>
-            <br>
-            
-            
-            
-            <button type="submit">Sign In</button>
-
-        </form>
+            <form action="/signin" method="post">
+                {% csrf_token %}
+                <label for="">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                <br>
+                
+                <label for="">Password</label>
+                <input type="password" id="pass1" name="pass1" placeholder="Enter your password" required>
+                <br>
+                
+                
+                
+                <button type="submit">Sign In</button>
+                
+            </form>
+        </div>
 
         <script src="" async defer></script>
     </body>

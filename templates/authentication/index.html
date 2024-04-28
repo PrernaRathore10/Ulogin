@@ -5,12 +5,13 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
+        {% load static %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Authentication</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
     </head>
     <body>
         
@@ -24,19 +25,22 @@
         </div>
         {% endfor %}
 
-        <h3>Welcome to Our Home Page</h3>
-
-        {% if user.is_authenticated %}
-        <h3>Hello {{fname}}</h3>
-        <p>You're logged in successfully !</p>
-
-        <button type='submit'><a href="/signout">Sign Out</a></button>
-        
-        {% else %}
-        <button type='submit'><a href="/signup">Sign Up</a></button>
-        <button type='submit'><a href="/signin">Sign In</a></button>
-        {% endif %}
-        
-        <script src="" async defer></script>
+        <div class="container">
+            <h3>Welcome to Our Home Page</h3>
+            
+            {% if user.is_authenticated %}
+            <h3>Hello {{fname}}</h3>
+            <p>You're logged in successfully !</p>
+            <div class="button">
+                <button class="btn" type='submit'><a href="/signout">Sign Out</a></button>
+                
+                {% else %}
+                <button class="btn" type='submit'><a href="/signup">Sign Up</a></button>
+                <button class="btn" type='submit'><a href="/signin">Sign In</a></button>
+                {% endif %}
+            </div>
+        </div>
+            
+            <script src="" async defer></script>
     </body>
 </html>
