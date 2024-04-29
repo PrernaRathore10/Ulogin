@@ -31,7 +31,7 @@ def signin(request):
             return render(request, 'authentication/index.html',{'fname':fname})
 
         else:
-            message.error(request,'Invalid credentials, Please try again')
+            messages.error(request,'Invalid credentials, Please try again')
             return redirect('signin')
 
 
